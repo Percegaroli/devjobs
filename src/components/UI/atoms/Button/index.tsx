@@ -3,7 +3,9 @@ import { ThemeContext } from '../../../context/ThemeContext';
 import styles from './Button.module.scss';
 import { ButtonProps } from './interface';
 
-const Button: React.FC<ButtonProps> = ({ text, className, variant }) => {
+const Button: React.FC<ButtonProps> = ({
+  text, className, variant, onClick,
+}) => {
   const { theme } = useContext(ThemeContext);
 
   const hasThemeVariant = () => (variant === 'secondary' ? `${styles[theme]}` : '');
@@ -17,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({ text, className, variant }) => {
     <button
       className={getClassName()}
       type="button"
+      onClick={onClick}
     >
       {text}
     </button>

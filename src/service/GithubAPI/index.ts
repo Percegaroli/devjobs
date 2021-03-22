@@ -3,18 +3,26 @@ import { GetPositionsAPIResponse } from './contracts';
 import { GetGithubJobListConfig } from './interface';
 
 export const getGithubJobs = (config?: GetGithubJobListConfig) => {
-  let parametros = `?page=${(config && config.page) ?? 0}`;
+  const parameters = mapGetGithubJobsParams(config);
+  return Axios.get<Array<GetPositionsAPIResponse>>(`https://jobs.github.com/positions.json${parameters}`);
+};
+
+export const getGithubJobsProxy = (config?: GetGithubJobListConfig) => {
+  const parameters = mapGetGithubJobsParams(config);
+  return Axios.get<Array<GetPositionsAPIResponse>>(`/api/githubJobs${parameters}`);
+};
+
+const mapGetGithubJobsParams = (config?: GetGithubJobListConfig) => {
+  let parameters = `?page=${(config && config.page) ?? 0}`;
   if (config) {
     const {
       fullTime, location, search,
     } = config;
-    if (fullTime) parametros += '&full_time=true';
-    if (location) parametros += `&location=${location}`;
-    if (search) parametros += `&search=${search}`;
+    if (fullTime) parameters += '&full_time=true';
+    if (location) parameters += `&location=${location}`;
+    if (search) parameters += `&search=${search}`;
   }
-  return Axios.get<Array<GetPositionsAPIResponse>>(`https://jobs.github.com/positions.json${parametros}`);
+  return parameters;
 };
-
-export const getGithubJobsProxy = (config?: GetGithubJobListConfig) => Axios.get<Array<GetPositionsAPIResponse>>('/api/githubJobs');
 
 export default {};

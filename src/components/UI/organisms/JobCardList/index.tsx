@@ -11,10 +11,32 @@ import styles from './JobCardList.module.scss';
 const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
   const { theme } = useContext(ThemeContext);
   const [jobs, setJobs] = useState<Array<JobCardProps>>([]);
+  const [page, setPage] = useState(1);
+  const [showingButton, setShowingButton] = useState(false);
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    try {
+      setShowingButton(false);
+      const response = await getGithubJobsProxy({
+        page,
+      });
+      addResponseToState(response.data);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setShowingButton(true);
+    }
+  };
 
   const addResponseToState = (jobsAPI: Array<GetPositionsAPIResponse>) => {
     const mappedState = mapAPIResponseToState(jobsAPI);
-    setJobs(mappedState);
+    const stateCopy = [...jobs, ...mappedState];
+    setJobs(stateCopy);
+    setPage(page + 1);
   };
 
   const mapAPIResponseToState = (jobsApi: Array<GetPositionsAPIResponse>):
@@ -26,18 +48,15 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
     postTime: job.created_at.toString(),
   }));
 
-  const fetchJobs = async () => {
-    try {
-      const response = await getGithubJobsProxy();
-      console.log(response.data);
-      addResponseToState(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchJobs();
-  }, []);
+  const renderButton = () => (showingButton ? (
+    <div className={styles.ButtonContainer}>
+      <Button
+        text="Load more"
+        variant="primary"
+        onClick={fetchJobs}
+      />
+    </div>
+  ) : null);
 
   return (
     <div className={`${styles.Container} ${styles[theme]} ${className}`}>
@@ -53,9 +72,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
           />
         ))}
       </div>
-      <div className={styles.ButtonContainer}>
-        <Button text="Load more" variant="primary" />
-      </div>
+      {renderButton()}
     </div>
   );
 };
