@@ -1,0 +1,18 @@
+@import '/styles/tokens.scss';
+
+.CategoryContainer {
+  display: flex;
+  margin-bottom: 16px;
+
+  &:last-child {
+    margin-left: 12px;
+  }
+}
+
+.Title {
+  margin-bottom: 17px;
+}
+
+.Company {
+  margin-bottom: 26px;
+}

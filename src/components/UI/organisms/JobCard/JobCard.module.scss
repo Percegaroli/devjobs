@@ -1,0 +1,14 @@
+@import '/styles/tokens';
+
+.Card {
+   padding: 49px 57px 36px 32px;
+   border-radius: 6px;
+}
+
+.Theme--light {
+  background-color: $secondaryColor-lightest
+}
+
+.Theme--dark {
+  background-color: $primaryColor-dark;
+}
