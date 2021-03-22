@@ -1,0 +1,25 @@
+@import '/styles/tokens';
+
+.Toggle {
+  height: 24px;
+  transition: padding .3s;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.Ball {
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background-color: $primaryColor-lightest;
+} 
+
+.LeftSelected {
+  padding: 5px 29px 5px 5px;
+}
+
+.RightSelected {
+  padding: 5px 5px 5px 29px;
+}

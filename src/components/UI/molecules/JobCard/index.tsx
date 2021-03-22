@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../../context/ThemeContext';
-import JobInfo from '../../molecules/JobInfo';
+import JobInfo from '../JobInfo';
 import { JobCardProps } from './interface';
 import styles from './JobCard.module.scss';
 
