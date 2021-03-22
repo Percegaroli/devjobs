@@ -5,4 +5,5 @@ export interface JobCardProps {
   company:string;
   location:string;
   title:string;
+  logoUrl: string;
 }

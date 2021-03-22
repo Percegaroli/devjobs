@@ -46,6 +46,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
     location: job.location,
     title: job.title,
     postTime: job.created_at.toString(),
+    logoUrl: job.company_logo,
   }));
 
   const renderButton = () => (showingButton ? (
@@ -69,6 +70,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
             postTime={job.postTime}
             title={job.title}
             key={`${job.title}-${job.company}`}
+            logoUrl={job.logoUrl}
           />
         ))}
       </div>

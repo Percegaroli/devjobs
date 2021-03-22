@@ -1,16 +1,25 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../../context/ThemeContext';
+import Card from '../../atoms/Card';
+import ExternalImage from '../../atoms/ExternalImage';
 import JobInfo from '../JobInfo';
 import { JobCardProps } from './interface';
 import styles from './JobCard.module.scss';
 
 const JobCard: React.FC<JobCardProps> = ({
-  type, company, location, postTime, title, className,
+  type, company, location, postTime, title, className, logoUrl,
 }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div className={`${styles.Card} ${className} ${styles[theme]}`}>
+    <Card className={`${styles.Card} ${styles.JobCard} ${className} ${styles[theme]}`}>
+      <ExternalImage
+        src={logoUrl}
+        alt=""
+        height={50}
+        width={50}
+        className={styles.Logo}
+      />
       <JobInfo
         postTime={postTime}
         type={type}
@@ -18,7 +27,7 @@ const JobCard: React.FC<JobCardProps> = ({
         location={location}
         title={title}
       />
-    </div>
+    </Card>
   );
 };
 
