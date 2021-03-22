@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import { Colors } from '../../../../enum/Colors';
 import Card from '../../atoms/Card';
 import Text from '../../atoms/Text';
@@ -20,9 +19,6 @@ const HowToApplyCard: React.FC<HowToApplyCardProps> = ({ howToApply, link, class
       color={Colors.SECONDARY_LIGHTEST}
       text={howToApply}
     />
-    <Link href="http://www.google.com.br" locale={false}>
-      aqui
-    </Link>
     <LinkText href={link} />
   </Card>
 );
