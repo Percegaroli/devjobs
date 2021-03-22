@@ -1,5 +1,6 @@
 export interface ButtonProps {
   className?: string;
   text:string;
-  variant?: 'primary' | 'secondary'
+  variant?: 'primary' | 'secondary';
+  onClick?: () => void
 }

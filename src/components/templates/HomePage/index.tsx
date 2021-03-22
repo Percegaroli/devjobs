@@ -1,7 +1,11 @@
 import React from 'react';
+import ThemeProvider from '../../context/ThemeContext/Provider';
 
 const HomePage = () => (
-  <div />
+  <ThemeProvider>
+    <div />
+  </ThemeProvider>
+
 );
 
 export default HomePage;

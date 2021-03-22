@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../../../context/ThemeContext';
 import styles from './Button.module.scss';
 import { ButtonProps } from './interface';
 
 const Button: React.FC<ButtonProps> = ({ text, className, variant }) => {
-  const theme = 'LighTheme';
-
+  const { theme } = useContext(ThemeContext);
   const getClassName = () => {
     const classVariant = `Button-${variant}`;
     const themeVariant = `--${theme}`;
@@ -24,6 +24,7 @@ const Button: React.FC<ButtonProps> = ({ text, className, variant }) => {
 Button.defaultProps = {
   className: '',
   variant: 'secondary',
+  onClick: () => {},
 };
 
 export default Button;
