@@ -1,0 +1,43 @@
+@import '/styles/tokens.scss';
+
+.Button {
+  padding: 16px 39px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
+}
+
+.Button-primary {
+  color: $secondaryColor-lightest;
+  background-color: $primaryColor-lightest;
+  transition: all .3s;
+
+  &:hover {
+    background-color: $primaryColor-light;
+  }
+}
+
+.Button-secondary {
+  color: $primaryColor-lightest;
+  &.--LightTheme {
+    background-color: rgba(89, 100, 224, .1);
+    mix-blend-mode: normal;
+    
+    &:hover {
+      background-color: rgba(89, 100, 224, .35); 
+    }
+  }
+
+  &.--DarkTheme {
+    color: $secondaryColor-lightest;
+    background-color: rgba(255,255,255,.1);
+    mix-blend-mode: normal;
+
+    &:hover {
+      background-color: rgba(255,255,255,.35);
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import "/styles/tokens";
+
+.H1 {
+  font-size: $headingSize-h1;
+  font-weight: bold;
+}
+
+.H2 {
+  font-size: $headingSize-h2;
+  font-weight: bold;
+}
+
+.H3 {
+  font-size: $headingSize-h3;
+  font-weight: bold;
+}
+
+.H4 {
+  font-size: $headingSize-h4;
+  font-weight: bold;
+}
+
+.Body {
+  font-size: $bodySize;
+  font-weight: normal;
+}
+
+.PrimaryLightest {
+  color: $primaryColor-lightest;
+}
+
+.PrimaryDark {
+  color: $primaryColor-dark;
+}
+
+.SecondaryLightest {
+  color: $secondaryColor-lightest;
+}
+
+.SecondaryDark {
+  color: $secondaryColor-dark;
+}
+
+.SecondaryDarkest {
+  color: $secondaryColor-darkest;
+}
+
+
+
