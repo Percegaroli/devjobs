@@ -6,14 +6,14 @@ import styles from './JobInfo.module.scss';
 
 interface Props {
   postTime: string;
-  category: string;
+  type: string;
   title: string;
   company: string;
   location: string;
 }
 
 const JobInfo: React.FC<Props> = ({
-  postTime, category, title, company, location,
+  postTime, type, title, company, location,
 }) => {
   const { theme } = useContext(ThemeContext);
   return (
@@ -26,7 +26,13 @@ const JobInfo: React.FC<Props> = ({
         />
         <Text
           color={Colors.SECONDARY_DARKEST}
-          text={category}
+          text="."
+          variant="body"
+          className={styles.Dot}
+        />
+        <Text
+          color={Colors.SECONDARY_DARKEST}
+          text={type}
           variant="body"
         />
       </div>

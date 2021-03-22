@@ -5,7 +5,7 @@ import { JobCardProps } from './interface';
 import styles from './JobCard.module.scss';
 
 const JobCard: React.FC<JobCardProps> = ({
-  category, company, location, postTime, title, className,
+  type, company, location, postTime, title, className,
 }) => {
   const { theme } = useContext(ThemeContext);
 
@@ -13,7 +13,7 @@ const JobCard: React.FC<JobCardProps> = ({
     <div className={`${styles.Card} ${className} ${styles[theme]}`}>
       <JobInfo
         postTime={postTime}
-        category={category}
+        type={type}
         company={company}
         location={location}
         title={title}

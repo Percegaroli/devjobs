@@ -1,7 +1,7 @@
 export interface JobCardProps {
   className?: string;
   postTime:string;
-  category:string;
+  type:string;
   company:string;
   location:string;
   title:string;
