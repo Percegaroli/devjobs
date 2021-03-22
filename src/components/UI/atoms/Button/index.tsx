@@ -5,10 +5,12 @@ import { ButtonProps } from './interface';
 
 const Button: React.FC<ButtonProps> = ({ text, className, variant }) => {
   const { theme } = useContext(ThemeContext);
+
+  const hasThemeVariant = () => (variant === 'secondary' ? `${styles[theme]}` : '');
+
   const getClassName = () => {
     const classVariant = `Button-${variant}`;
-    const themeVariant = `--${theme}`;
-    return `${className} ${styles.Button} ${styles[classVariant]} ${styles[themeVariant]}`;
+    return `${className} ${styles.Button} ${styles[classVariant]} ${hasThemeVariant()}`;
   };
 
   return (
@@ -23,7 +25,7 @@ const Button: React.FC<ButtonProps> = ({ text, className, variant }) => {
 
 Button.defaultProps = {
   className: '',
-  variant: 'secondary',
+  variant: 'primary',
   onClick: () => {},
 };
 

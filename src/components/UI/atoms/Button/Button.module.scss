@@ -22,22 +22,25 @@
 
 .Button-secondary {
   color: $primaryColor-lightest;
+}
+
+.DarkTheme {
+  color: $secondaryColor-lightest;
+  background-color: rgba(255,255,255,.1);
+  mix-blend-mode: normal;
+
+  &:hover {
+    background-color: rgba(255,255,255,.35);
+  }
+}
+
+.LightTheme {
   &.--LightTheme {
     background-color: rgba(89, 100, 224, .1);
     mix-blend-mode: normal;
     
     &:hover {
       background-color: rgba(89, 100, 224, .35); 
-    }
-  }
-
-  &.--DarkTheme {
-    color: $secondaryColor-lightest;
-    background-color: rgba(255,255,255,.1);
-    mix-blend-mode: normal;
-
-    &:hover {
-      background-color: rgba(255,255,255,.35);
     }
   }
 }

@@ -10,7 +10,7 @@ const Text: React.FC<TextProps> = (props: TextProps) => {
   const getClassName = () => {
     const variantClass = styles[variant[0].toUpperCase() + variant.slice(1)];
     const colorClass = styles[color];
-    return `${variantClass} ${colorClass} ${className}`;
+    return `${variantClass} ${colorClass} ${className} ${styles.Text}`;
   };
 
   const renderElement = () => {

@@ -1,0 +1,22 @@
+@import '/styles/tokens.scss';
+
+.Container {
+  height: 100%;
+  padding: 0 24px;
+}
+
+.ButtonContainer {
+  padding: 32px 0 62px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ListContainer {
+  display: flex;
+  flex-direction: column;
+  & >:not(:last-child){
+    margin-bottom: 49px;
+  }
+}

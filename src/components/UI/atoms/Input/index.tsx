@@ -9,7 +9,7 @@ const Input: React.FC<InputProps> = ({
     type={type}
     value={value}
     onChange={onChange}
-    className={`className ${styles.Input}`}
+    className={`${className} ${styles.Input}`}
   />
 );
 

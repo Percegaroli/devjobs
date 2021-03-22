@@ -1,5 +1,9 @@
 @import "/styles/tokens";
 
+.Text {
+  transition: color .2s;
+}
+
 .H1 {
   font-size: $headingSize-h1;
   font-weight: bold;

@@ -1,0 +1,19 @@
+@import '/styles/tokens';
+
+.Container {
+  width: 100%;
+  height: 100%;
+  transition: all .2s;
+}
+
+.LightTheme {
+  background-color: $secondaryColor-light;
+}
+
+.DarkTheme {
+  background-color: $primaryColor-darkest;
+}
+
+.JobCardList {
+  margin-top: 57px;
+}
