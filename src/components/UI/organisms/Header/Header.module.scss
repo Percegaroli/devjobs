@@ -2,9 +2,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 46px 165px 85px;
+  background: url('../../../../../public/mobile/bg-pattern-header.svg');
+  padding: 32px 24px 72px;
+}
+
+.Desktop {
   background: url('../../../../../public/desktop/bg-pattern-header.svg');
   background-repeat: repeat-y;
   background-size: cover;
+  padding: 46px 165px 85px;
   border-radius: 0px 0px 0 100px;
 }

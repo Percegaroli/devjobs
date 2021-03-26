@@ -1,4 +1,5 @@
 export interface JobCardProps {
+  id: string;
   className?: string;
   postTime:string;
   type:string;

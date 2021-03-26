@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ThemeContext } from '.';
+import { INITIAL_THEME_VALUE, ThemeContext } from '.';
 import { Theme } from './interface';
 
 const ThemeProvider: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('LightTheme');
+  const [theme, setTheme] = useState<Theme>(INITIAL_THEME_VALUE.theme);
 
   return (
     <ThemeContext.Provider value={{ theme, changeTheme: setTheme }}>

@@ -41,6 +41,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
 
   const mapAPIResponseToState = (jobsApi: Array<GetPositionsAPIResponse>):
     Array<JobCardProps> => jobsApi.map((job) => ({
+    id: job.id,
     type: job.type,
     company: job.company,
     location: job.location,
@@ -64,12 +65,13 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
       <div className={`${styles.ListContainer}`}>
         {jobs.map((job) => (
           <JobCard
+            id={job.id}
             type={job.type}
             company={job.company}
             location={job.location}
             postTime={job.postTime}
             title={job.title}
-            key={`${job.title}-${job.company}`}
+            key={job.id}
             logoUrl={job.logoUrl}
           />
         ))}
