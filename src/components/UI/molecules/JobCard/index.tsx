@@ -7,12 +7,15 @@ import { JobCardProps } from './interface';
 import styles from './JobCard.module.scss';
 
 const JobCard: React.FC<JobCardProps> = ({
-  type, company, location, postTime, title, className, logoUrl,
+  type, company, location, postTime, title, className, logoUrl, onClick,
 }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Card className={`${styles.Card} ${styles.JobCard} ${className} ${styles[theme]}`}>
+    <Card
+      className={`${styles.Card} ${styles.JobCard} ${className} ${styles[theme]}`}
+      onClick={onClick}
+    >
       <ExternalImage
         src={logoUrl}
         alt=""

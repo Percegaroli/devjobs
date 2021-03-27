@@ -3,12 +3,13 @@ import { InputProps } from './interface';
 import styles from './Input.module.scss';
 
 const Input: React.FC<InputProps> = ({
-  onChange, value, type, className,
+  onChange, value, type, className, placeholder,
 }) => (
   <input
     type={type}
     value={value}
     onChange={onChange}
+    placeholder={placeholder}
     className={`${className} ${styles.Input}`}
   />
 );

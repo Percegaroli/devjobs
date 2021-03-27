@@ -1,16 +1,18 @@
+import { useRouter } from 'next/dist/client/router';
 import React, { useContext, useState, useEffect } from 'react';
+import { JobModel } from '../../../../models/JobModel';
 import { getGithubJobsProxy } from '../../../../service/GithubAPI';
 import { GetPositionsAPIResponse } from '../../../../service/GithubAPI/contracts';
 import { ThemeContext } from '../../../context/ThemeContext';
 import Button from '../../atoms/Button';
 import JobCard from '../../molecules/JobCard';
-import { JobCardProps } from '../../molecules/JobCard/interface';
 import { JobCardListProps } from './interface';
 import styles from './JobCardList.module.scss';
 
 const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
   const { theme } = useContext(ThemeContext);
-  const [jobs, setJobs] = useState<Array<JobCardProps>>([]);
+  const router = useRouter();
+  const [jobs, setJobs] = useState<Array<JobModel>>([]);
   const [page, setPage] = useState(1);
   const [showingButton, setShowingButton] = useState(false);
 
@@ -32,6 +34,10 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
     }
   };
 
+  const onJobClick = () => {
+    router.push('/jobs/details');
+  };
+
   const addResponseToState = (jobsAPI: Array<GetPositionsAPIResponse>) => {
     const mappedState = mapAPIResponseToState(jobsAPI);
     const stateCopy = [...jobs, ...mappedState];
@@ -40,7 +46,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
   };
 
   const mapAPIResponseToState = (jobsApi: Array<GetPositionsAPIResponse>):
-    Array<JobCardProps> => jobsApi.map((job) => ({
+    Array<JobModel> => jobsApi.map((job) => ({
     id: job.id,
     type: job.type,
     company: job.company,
@@ -65,6 +71,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
       <div className={`${styles.ListContainer}`}>
         {jobs.map((job) => (
           <JobCard
+            onClick={onJobClick}
             id={job.id}
             type={job.type}
             company={job.company}

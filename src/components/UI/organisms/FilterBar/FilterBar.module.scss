@@ -1,0 +1,21 @@
+.Card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.SearchIcon {
+  & path{
+    fill: white;
+  }
+}
+
+.ButtonsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.SearchButton {
+  margin-left: 10px;
+}

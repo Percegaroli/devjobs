@@ -1,4 +1,4 @@
-export interface JobCardProps {
+export interface JobModel {
   id: string;
   className?: string;
   postTime:string;
@@ -7,5 +7,4 @@ export interface JobCardProps {
   location:string;
   title:string;
   logoUrl: string;
-  onClick: () => void
 }

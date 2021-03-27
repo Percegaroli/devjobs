@@ -1,0 +1,15 @@
+@import '/styles/tokens.scss';
+
+.Button {
+  border-radius: 5px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+}
+
+.PrimaryButtonColor {
+  background-color: $primaryColor-lightest;
+}

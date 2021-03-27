@@ -1,6 +1,16 @@
+@import '/styles/tokens.scss';
+
 .Card {
   padding: 32px;
   width: 100%;
   box-sizing: border-box;
   border-radius: 6px;
+}
+
+.LightTheme {
+  background-color: $secondaryColor-lightest;
+}
+
+.DarkTheme{
+  background-color: $primaryColor-dark;
 }

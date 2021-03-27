@@ -1,9 +1,10 @@
 .Header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: url('../../../../../public/mobile/bg-pattern-header.svg');
   padding: 32px 24px 72px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .Desktop {
@@ -12,4 +13,18 @@
   background-size: cover;
   padding: 46px 165px 85px;
   border-radius: 0px 0px 0 100px;
+}
+
+.Container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.FilterBarContainer {
+  position: absolute;
+  bottom: -42px;
+  left: 0;
+  width: 100%;
+  padding: 0 24px;
 }
