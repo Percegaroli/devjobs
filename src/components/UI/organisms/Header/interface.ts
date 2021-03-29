@@ -1,6 +1,5 @@
 import { JobModel } from '../../../../models/JobModel';
 
-export interface FilterBarProps {
-  className?: string
+export interface HeaderProps {
   setJobs: (jobs: Array<JobModel>) => void
 }

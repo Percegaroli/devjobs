@@ -1,0 +1,32 @@
+@import '/styles/tokens';
+
+.Checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  opacity: 0.1;
+  mix-blend-mode: normal;
+  background-color: $primaryColor-dark;
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: $primaryColor-lightest;
+    opacity: .25;
+  }
+}
+
+.DarkTheme {
+  background-color: $secondaryColor-lightest;
+  opacity: .1;
+}
+
+.Checked,
+.Checked:hover {
+  background-color: $primaryColor-lightest;
+  opacity: 1; 
+}
+

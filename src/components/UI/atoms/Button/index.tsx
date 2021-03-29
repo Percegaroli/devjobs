@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 import { ButtonProps } from './interface';
 
 const Button: React.FC<ButtonProps> = ({
-  text, className, variant, onClick,
+  text, className, variant, onClick, fullWidth,
 }) => {
   const { theme } = useContext(ThemeContext);
 
@@ -12,7 +12,8 @@ const Button: React.FC<ButtonProps> = ({
 
   const getClassName = () => {
     const classVariant = `Button-${variant}`;
-    return `${className} ${styles.Button} ${styles[classVariant]} ${hasThemeVariant()}`;
+    const fullWidthVariant = fullWidth ? styles.FullWidth : '';
+    return `${className} ${styles.Button} ${styles[classVariant]} ${hasThemeVariant()} ${fullWidthVariant}`;
   };
 
   return (
@@ -30,6 +31,7 @@ Button.defaultProps = {
   className: '',
   variant: 'primary',
   onClick: () => {},
+  fullWidth: false,
 };
 
 export default Button;

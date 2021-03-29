@@ -9,10 +9,9 @@ import JobCard from '../../molecules/JobCard';
 import { JobCardListProps } from './interface';
 import styles from './JobCardList.module.scss';
 
-const JobCardList: React.FC<JobCardListProps> = ({ className }) => {
+const JobCardList: React.FC<JobCardListProps> = ({ className, jobs, setJobs }) => {
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
-  const [jobs, setJobs] = useState<Array<JobModel>>([]);
   const [page, setPage] = useState(1);
   const [showingButton, setShowingButton] = useState(false);
 

@@ -1,0 +1,19 @@
+.Overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  min-height: 100vh;
+  padding: 0 24px;
+}
+
+.Card {
+  padding: 24px;
+}

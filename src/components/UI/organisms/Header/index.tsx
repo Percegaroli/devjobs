@@ -4,8 +4,10 @@ import Logo from '../../atoms/Logo';
 import ThemeToggle from '../../molecules/ThemeToggle';
 import FilterBar from '../FilterBar';
 import styles from './Header.module.scss';
+import { HeaderProps } from './interface';
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+  const { setJobs } = props;
   const resolution = UseResolution();
   return (
     <div className={`${styles.Header} ${styles[resolution]}`}>
@@ -14,9 +16,11 @@ const Header: React.FC = () => {
         <ThemeToggle />
       </div>
       <div className={styles.FilterBarContainer}>
-        <FilterBar className={styles.FilterBar} />
+        <FilterBar
+          setJobs={setJobs}
+          className={styles.FilterBar}
+        />
       </div>
-
     </div>
   );
 };

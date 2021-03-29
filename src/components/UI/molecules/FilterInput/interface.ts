@@ -4,5 +4,11 @@ export interface FilterInputProps {
   placeholder: string;
   value: string,
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  iconPath: string;
+  icon: FilterInputIconeProps
+}
+
+export interface FilterInputIconeProps {
+  path: string;
+  width?: number;
+  height?: number;
 }
