@@ -19,10 +19,11 @@ const CheckboxFormItem = (props: CheckboxFormItemProps) => {
       >
         <Text
           color={theme === 'LightTheme' ? Colors.PRIMARY_DARK : Colors.SECONDARY_LIGHTEST}
-          text={label}
           variant="body"
           className={styles.Label}
-        />
+        >
+          {label}
+        </Text>
       </button>
 
     </div>

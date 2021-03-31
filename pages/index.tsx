@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import HomePageTemplate from '../src/components/templates/HomePage';
-import { JobModel } from '../src/models/JobModel';
+import { JobStateContext } from '../src/state/StateContext';
 
 export default function Home() {
-  const [jobs, setJobs] = useState<Array<JobModel>>([]);
+  const { jobs, setJobs } = useContext(JobStateContext);
+
   return (
     <div>
       <Head>

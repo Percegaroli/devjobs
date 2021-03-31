@@ -1,0 +1,11 @@
+.Item {
+  //margin-bottom: 40px;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.Container {
+  padding: 0 24px;
+}

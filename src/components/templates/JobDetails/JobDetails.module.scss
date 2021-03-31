@@ -1,0 +1,22 @@
+@import '/styles/tokens.scss';
+
+.Container {
+  background-color: $secondaryColor-light;
+  transition: all .2s;
+}
+
+.DarkTheme {
+  background-color: $primaryColor-darkest;
+}
+
+.Description {
+  margin-top: 24px;
+}
+
+.CardContained {
+  padding: 0 24px;
+}
+
+.ApplyNowCard {
+  margin-top: 65px;
+}

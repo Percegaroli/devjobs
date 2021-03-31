@@ -13,9 +13,10 @@ const LinkText: React.FC<LinkTextProps> = ({
       <Text
         variant={textProps.variant}
         color={textProps.color}
-        text={customText || href}
         className={`${textProps.className} ${underscored ? styles.Underscored : ''}`}
-      />
+      >
+        {customText || href}
+      </Text>
     </a>
   );
 
@@ -31,7 +32,6 @@ LinkText.defaultProps = {
   href: '',
   textProps: {
     color: Colors.SECONDARY_LIGHTEST,
-    text: '',
     variant: 'h4',
     className: '',
   },

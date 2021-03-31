@@ -1,0 +1,21 @@
+.Card {
+  position: relative;
+  padding: 49px 90px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Logo {
+  position: absolute;
+  left: 50%;
+  top: -25px;
+}
+
+.Button {
+  margin-top: 24px;
+}
+
+.Subtitle {
+  margin-top: 13px;
+}

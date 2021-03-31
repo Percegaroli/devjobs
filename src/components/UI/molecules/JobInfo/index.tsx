@@ -21,38 +21,44 @@ const JobInfo: React.FC<Props> = ({
       <div className={styles.CategoryContainer}>
         <Text
           color={Colors.SECONDARY_DARKEST}
-          text={postTime}
           variant="body"
-        />
+        >
+          {postTime}
+        </Text>
         <Text
           color={Colors.SECONDARY_DARKEST}
-          text="."
           variant="body"
           className={styles.Dot}
-        />
+        >
+          .
+        </Text>
         <Text
           color={Colors.SECONDARY_DARKEST}
-          text={type}
           variant="body"
-        />
+        >
+          {type}
+        </Text>
       </div>
       <Text
         color={theme === 'LightTheme' ? Colors.PRIMARY_DARKEST : Colors.SECONDARY_LIGHTEST}
-        text={title}
         variant="h3"
         className={styles.Title}
-      />
+      >
+        {title}
+      </Text>
       <Text
         color={Colors.SECONDARY_DARKEST}
-        text={company}
         variant="h3"
         className={styles.Company}
-      />
+      >
+        {company}
+      </Text>
       <Text
         color={Colors.PRIMARY_LIGHTEST}
-        text={location}
         variant="h4"
-      />
+      >
+        {location}
+      </Text>
     </div>
   );
 };

@@ -11,14 +11,16 @@ const HowToApplyCard: React.FC<HowToApplyCardProps> = ({ howToApply, link, class
     <Text
       variant="h3"
       color={Colors.SECONDARY_LIGHTEST}
-      text="How to Apply"
       className={styles.Title}
-    />
+    >
+      How to Apply
+    </Text>
     <Text
       variant="body"
       color={Colors.SECONDARY_LIGHTEST}
-      text={howToApply}
-    />
+    >
+      {howToApply}
+    </Text>
     <LinkText href={link} />
   </Card>
 );
