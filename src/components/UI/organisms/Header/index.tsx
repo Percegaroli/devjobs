@@ -16,12 +16,14 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
         <Logo />
         <ThemeToggle />
       </div>
+      {/* }
       <div className={styles.FilterBarContainer}>
         <FilterBar
           setJobs={setJobs}
           className={styles.FilterBar}
         />
       </div>
+  */}
     </div>
   );
 };

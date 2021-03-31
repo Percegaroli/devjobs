@@ -6,7 +6,9 @@ import styles from './HowToApplyCard.module.scss';
 import { HowToApplyCardProps } from './interface';
 import LinkText from '../LinkText';
 
-const HowToApplyCard: React.FC<HowToApplyCardProps> = ({ howToApply, link, className }) => (
+const HowToApplyCard: React.FC<HowToApplyCardProps> = ({
+  howToApply, link, className, linkPlaceholder,
+}) => (
   <Card className={`${styles.Card} ${className}`}>
     <Text
       variant="h3"
@@ -21,8 +23,12 @@ const HowToApplyCard: React.FC<HowToApplyCardProps> = ({ howToApply, link, class
     >
       {howToApply}
     </Text>
-    <LinkText href={link} />
+    <LinkText href={link} customText={linkPlaceholder ?? link} />
   </Card>
 );
+
+HowToApplyCard.defaultProps = {
+  linkPlaceholder: '',
+};
 
 export default HowToApplyCard;

@@ -1,6 +1,5 @@
-export interface JobModel {
+export interface JobResume {
   id: string;
-  className?: string;
   postTime:string;
   type:string;
   company:string;

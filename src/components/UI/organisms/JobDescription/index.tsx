@@ -13,10 +13,11 @@ const JobDescription = (props: JobDescriptionProps) => {
 
   useEffect(() => {
     parseDescription();
-  }, []);
+  }, [description]);
 
   const parseDescription = () => {
     const descriptionParsed = parse(description);
+    console.log(descriptionParsed);
     const newElements: Array<React.ReactElement> = [];
     descriptionParsed.forEach((element: any) => {
       newElements.push(parseElement(element));
@@ -33,6 +34,13 @@ const JobDescription = (props: JobDescriptionProps) => {
         return returnOrderedList(element);
       }
       if (element.name === 'p' || element.name === 'h1' || element.name === 'h2' || element.name === 'h3' || element.name === 'h4') {
+        if (element.children[0].type === 'tag') {
+          console.log(element);
+          return parseElement(element.children[0]);
+        }
+        if (element.children[0].data.length < 40) {
+          return renderTextElement(element, 'h3');
+        }
         return renderTextElement(element, element.name);
       }
     }
@@ -62,7 +70,12 @@ const JobDescription = (props: JobDescriptionProps) => {
   };
 
   const returnUnorderedList = (element: any) => {
-    const itens = element.children.map((children) => children.children[0].data);
+    const itens = [];
+    element.children.forEach((children) => {
+      if (children.type === 'tag') {
+        itens.push(children.children[0].data);
+      }
+    });
     return (
       <StringList
         items={itens}
@@ -72,12 +85,17 @@ const JobDescription = (props: JobDescriptionProps) => {
   };
 
   const returnOrderedList = (element: any) => {
-    const items = element.children.map((children) => children.children[0].data);
+    const itens = [];
+    element.children.forEach((children) => {
+      if (children.type === 'tag') {
+        itens.push(children.children[0].data);
+      }
+    });
     return (
       <StringList
         isOrdered
         className={styles.Item}
-        items={items}
+        items={itens}
       />
     );
   };

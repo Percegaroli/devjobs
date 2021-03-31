@@ -1,7 +1,8 @@
-import { JobModel } from '../../../../models/JobModel';
+import { JobResume } from '../../../../models/JobResume';
 
 export interface JobCardListProps {
   className?: string;
-  jobs: Array<JobModel>,
-  setJobs: (jobs: Array<JobModel>) => void
+  jobs: Array<JobResume>,
+  setJobs: (jobs: Array<JobResume>) => void
+  selectJob: (selectedJobIndex: number) => void
 }

@@ -3,6 +3,7 @@
 .Container {
   background-color: $secondaryColor-light;
   transition: all .2s;
+  min-height: 100vh;
 }
 
 .DarkTheme {
@@ -10,7 +11,7 @@
 }
 
 .Description {
-  margin-top: 24px;
+  margin-top: 9px;
 }
 
 .CardContained {
@@ -19,4 +20,13 @@
 
 .ApplyNowCard {
   margin-top: 65px;
+}
+
+.CompanyCard {
+  position: relative;
+  top: -15px;
+}
+
+.HowToApplySection {
+  margin-top: 32px;
 }

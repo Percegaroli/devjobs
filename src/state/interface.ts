@@ -1,6 +1,8 @@
-import { JobModel } from '../models/JobModel';
+import { JobResume } from '../models/JobResume';
 
 export interface JobsState {
-  jobs: Array<JobModel>,
-  setJobs: (jobs: Array<JobModel>) => void
+  jobs: Array<JobResume>,
+  setJobs: (jobs: Array<JobResume>) => void
+  selectedJobIndex: number
+  setSelectedJobIndex: (selectedJobIndex: number) => void
 }

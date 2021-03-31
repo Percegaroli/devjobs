@@ -1,6 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { useContext, useState, useEffect } from 'react';
-import { JobModel } from '../../../../models/JobModel';
+import { JobResume } from '../../../../models/JobResume';
 import { getGithubJobsProxy } from '../../../../service/GithubAPI';
 import { GetPositionsAPIResponse } from '../../../../service/GithubAPI/contracts';
 import { ThemeContext } from '../../../context/ThemeContext';
@@ -9,7 +9,9 @@ import JobCard from '../../molecules/JobCard';
 import { JobCardListProps } from './interface';
 import styles from './JobCardList.module.scss';
 
-const JobCardList: React.FC<JobCardListProps> = ({ className, jobs, setJobs }) => {
+const JobCardList: React.FC<JobCardListProps> = ({
+  className, jobs, setJobs, selectJob,
+}) => {
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
   const [page, setPage] = useState(1);
@@ -33,8 +35,9 @@ const JobCardList: React.FC<JobCardListProps> = ({ className, jobs, setJobs }) =
     }
   };
 
-  const onJobClick = () => {
-    router.push('/jobs/details');
+  const onJobClick = (index: number, id: string) => {
+    selectJob(index);
+    router.push(`/jobs/details/${id}`);
   };
 
   const addResponseToState = (jobsAPI: Array<GetPositionsAPIResponse>) => {
@@ -45,7 +48,7 @@ const JobCardList: React.FC<JobCardListProps> = ({ className, jobs, setJobs }) =
   };
 
   const mapAPIResponseToState = (jobsApi: Array<GetPositionsAPIResponse>):
-    Array<JobModel> => jobsApi.map((job) => ({
+    Array<JobResume> => jobsApi.map((job) => ({
     id: job.id,
     type: job.type,
     company: job.company,
@@ -68,9 +71,9 @@ const JobCardList: React.FC<JobCardListProps> = ({ className, jobs, setJobs }) =
   return (
     <div className={`${styles.Container} ${styles[theme]} ${className}`}>
       <div className={`${styles.ListContainer}`}>
-        {jobs.map((job) => (
+        {jobs.map((job, index) => (
           <JobCard
-            onClick={onJobClick}
+            onClick={() => onJobClick(index, job.id)}
             id={job.id}
             type={job.type}
             company={job.company}

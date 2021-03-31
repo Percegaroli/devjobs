@@ -25,4 +25,11 @@ const mapGetGithubJobsParams = (config?: GetGithubJobListConfig) => {
   return parameters;
 };
 
+export const getGithubJobDetailsProxy = (jobId: string) => Axios.get<GetPositionsAPIResponse>(`/api/jobDetails/${jobId}`);
+
+export const getGithubJobDetails = (jobId: string) => {
+  const url = `https://jobs.github.com/positions/${jobId}.json`;
+  return Axios.get<GetPositionsAPIResponse>(url);
+};
+
 export default {};

@@ -4,7 +4,7 @@ import HomePageTemplate from '../src/components/templates/HomePage';
 import { JobStateContext } from '../src/state/StateContext';
 
 export default function Home() {
-  const { jobs, setJobs } = useContext(JobStateContext);
+  const { jobs, setJobs, setSelectedJobIndex } = useContext(JobStateContext);
 
   return (
     <div>
@@ -15,6 +15,7 @@ export default function Home() {
       <HomePageTemplate
         jobs={jobs}
         setJobs={setJobs}
+        selectJob={setSelectedJobIndex}
       />
     </div>
   );

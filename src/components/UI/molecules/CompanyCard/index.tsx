@@ -22,7 +22,7 @@ const CompanyCard = (props: CompanyCardProps) => {
         width={50}
         height={50}
         src={companyLogo}
-        alt="Company logo"
+        alt="Company Logo"
         className={styles.Logo}
       />
       <Text

@@ -1,5 +1,5 @@
-import { JobModel } from '../../../../models/JobModel';
+import { JobResume } from '../../../../models/JobResume';
 
 export interface HeaderProps {
-  setJobs: (jobs: Array<JobModel>) => void
+  setJobs: (jobs: Array<JobResume>) => void
 }

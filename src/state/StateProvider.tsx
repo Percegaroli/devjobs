@@ -1,15 +1,17 @@
-import React, { useContext, useState } from 'react';
-import { JobModel } from '../models/JobModel';
+import React, { useState } from 'react';
+import { JobResume } from '../models/JobResume';
 import { JobStateContext } from './StateContext';
 
 const JobStateProvider: React.FC = ({ children }) => {
-  const [jobs, setJobs] = useState<Array<JobModel>>([]);
-  const aa = useContext(JobStateContext);
+  const [jobs, setJobs] = useState<Array<JobResume>>([]);
+  const [selectedJobIndex, setSelectedJobIndex] = useState(-1);
 
   return (
     <JobStateContext.Provider value={{
       jobs,
       setJobs,
+      selectedJobIndex,
+      setSelectedJobIndex,
     }}
     >
       {children}

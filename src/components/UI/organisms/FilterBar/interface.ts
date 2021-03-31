@@ -1,6 +1,6 @@
-import { JobModel } from '../../../../models/JobModel';
+import { JobResume } from '../../../../models/JobResume';
 
 export interface FilterBarProps {
   className?: string
-  setJobs: (jobs: Array<JobModel>) => void
+  setJobs: (jobs: Array<JobResume>) => void
 }

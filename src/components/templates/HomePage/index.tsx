@@ -6,7 +6,7 @@ import styles from './HomePageTemplate.module.scss';
 import { HomePageTemplateProps } from './interface';
 
 const HomePageTemplate = (props: HomePageTemplateProps) => {
-  const { jobs, setJobs } = props;
+  const { jobs, setJobs, selectJob } = props;
   const { theme } = useContext(ThemeContext);
   return (
     <div className={`${styles.Container} ${styles[theme]}`}>
@@ -17,6 +17,7 @@ const HomePageTemplate = (props: HomePageTemplateProps) => {
         className={styles.JobCardList}
         jobs={jobs}
         setJobs={setJobs}
+        selectJob={selectJob}
       />
     </div>
   );
