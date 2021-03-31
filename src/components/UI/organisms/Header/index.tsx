@@ -9,6 +9,7 @@ import { HeaderProps } from './interface';
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const { setJobs } = props;
   const resolution = UseResolution();
+  console.log(resolution);
   return (
     <div className={`${styles.Header} ${styles[resolution]}`}>
       <div className={styles.Container}>

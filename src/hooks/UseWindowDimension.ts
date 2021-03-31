@@ -11,6 +11,7 @@ const UseWindowDimension = () => {
 
   useEffect(() => {
     window.addEventListener('resize', changeDimension);
+    setWindowDimension(getWindowDimension());
     return () => window.removeEventListener('resize', changeDimension);
   }, []);
 

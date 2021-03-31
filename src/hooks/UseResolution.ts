@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { INITIAL_THEME_VALUE } from '../components/context/ThemeContext';
 import UseWindowDimension from './UseWindowDimension';
+
+type Resolution = 'Mobile' | 'Tablet' | 'Desktop'
 
 const UseResolution = () => {
   const windowWidth = UseWindowDimension();
-  const [resolution, setResolution] = useState(INITIAL_THEME_VALUE.resolution);
+  const [resolution, setResolution] = useState<Resolution>('Mobile');
 
   useEffect(() => {
     defineResolution(windowWidth);
