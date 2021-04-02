@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Colors } from '../../../../enum/Colors';
+import useDateAgo from '../../../../hooks/UseDateAgo';
 import { ThemeContext } from '../../../context/ThemeContext';
 import Text from '../../atoms/Text';
 import styles from './JobInfo.module.scss';
@@ -16,6 +17,8 @@ const JobInfo: React.FC<Props> = ({
   postTime, type, title, company, location,
 }) => {
   const { theme } = useContext(ThemeContext);
+  const postDistanceTime = useDateAgo(new Date(postTime));
+
   return (
     <div className={styles.Container}>
       <div className={styles.CategoryContainer}>
@@ -23,7 +26,7 @@ const JobInfo: React.FC<Props> = ({
           color={Colors.SECONDARY_DARKEST}
           variant="body"
         >
-          {postTime}
+          {postDistanceTime}
         </Text>
         <Text
           color={Colors.SECONDARY_DARKEST}
