@@ -42,9 +42,7 @@ const JobDetails = (props: JobDetailsTemplateProps) => {
 
   return (
     <div className={` ${styles.Container} ${styles[theme]}`}>
-      <Header
-        setJobs={() => {}}
-      />
+      <Header />
       { renderPageContent()}
     </div>
   );
