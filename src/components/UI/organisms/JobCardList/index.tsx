@@ -15,10 +15,12 @@ const JobCardList: React.FC<JobCardListProps> = ({
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
   const [page, setPage] = useState(1);
-  const [showingButton, setShowingButton] = useState(false);
+  const [showingButton, setShowingButton] = useState(jobs.length > 0);
 
   useEffect(() => {
-    fetchJobs();
+    if (!jobs.length) {
+      fetchJobs();
+    }
   }, []);
 
   const fetchJobs = async () => {
@@ -82,6 +84,7 @@ const JobCardList: React.FC<JobCardListProps> = ({
             title={job.title}
             key={job.id}
             logoUrl={job.logoUrl}
+            className={styles.JobCard}
           />
         ))}
       </div>

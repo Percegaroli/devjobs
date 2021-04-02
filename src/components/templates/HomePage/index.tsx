@@ -11,7 +11,7 @@ const HomePageTemplate = (props: HomePageTemplateProps) => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={`${styles.Container} ${styles[theme]}`}>
-      <Header setJobs={setJobs} />
+      <Header />
       <FilterBar
         setJobs={setJobs}
         className={styles.FilterBar}
