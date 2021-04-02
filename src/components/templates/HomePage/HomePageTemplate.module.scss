@@ -17,6 +17,10 @@
 
 .JobCardList {
   margin-top: 97px;
+
+  @media(min-width: $breakpoint-tablet){
+    margin-top:110px;
+  }
 }
 
 .FilterBar {

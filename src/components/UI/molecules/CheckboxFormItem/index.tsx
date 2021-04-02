@@ -7,10 +7,12 @@ import styles from './CheckboxFormItem.module.scss';
 import { CheckboxFormItemProps } from './interface';
 
 const CheckboxFormItem = (props: CheckboxFormItemProps) => {
-  const { isChecked, label, onClick } = props;
+  const {
+    isChecked, label, onClick, className,
+  } = props;
   const { theme } = useContext(ThemeContext);
   return (
-    <div className={styles.Container}>
+    <div className={`${styles.Container} ${className}`}>
       <Checkbox isChecked={isChecked} onClick={onClick} />
       <button
         type="button"
@@ -28,6 +30,10 @@ const CheckboxFormItem = (props: CheckboxFormItemProps) => {
 
     </div>
   );
+};
+
+CheckboxFormItem.defaultProps = {
+  className: '',
 };
 
 export default CheckboxFormItem;

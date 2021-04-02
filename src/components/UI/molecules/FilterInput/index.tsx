@@ -5,9 +5,9 @@ import Input from '../../atoms/Input';
 import styles from './FilterInput.module.scss';
 
 const FilterInput: React.FC<FilterInputProps> = ({
-  onChange, icon, placeholder, value,
+  onChange, icon, placeholder, value, className,
 }) => (
-  <div className={styles.FilterInputContainer}>
+  <div className={`${styles.FilterInputContainer} ${className}`}>
     <Image
       src={icon.path}
       alt="Icon"
@@ -22,5 +22,9 @@ const FilterInput: React.FC<FilterInputProps> = ({
     />
   </div>
 );
+
+FilterInput.defaultProps = {
+  className: '',
+};
 
 export default FilterInput;

@@ -5,6 +5,7 @@ import { getGithubJobsProxy } from '../../../../service/GithubAPI';
 import { GetPositionsAPIResponse } from '../../../../service/GithubAPI/contracts';
 import { ThemeContext } from '../../../context/ThemeContext';
 import Button from '../../atoms/Button';
+import Container from '../../atoms/Container';
 import JobCard from '../../molecules/JobCard';
 import { JobCardListProps } from './interface';
 import styles from './JobCardList.module.scss';
@@ -71,7 +72,7 @@ const JobCardList: React.FC<JobCardListProps> = ({
   ) : null);
 
   return (
-    <div className={`${styles.Container} ${styles[theme]} ${className}`}>
+    <Container className={`${styles.Container} ${className}`}>
       <div className={`${styles.ListContainer}`}>
         {jobs.map((job, index) => (
           <JobCard
@@ -89,7 +90,7 @@ const JobCardList: React.FC<JobCardListProps> = ({
         ))}
       </div>
       {renderButton()}
-    </div>
+    </Container>
   );
 };
 

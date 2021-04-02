@@ -1,8 +1,14 @@
+@import '/styles/tokens.scss';
+
 .Card {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0px 16px 0 24px;
+  }  
 }
 
 .SearchIcon {
@@ -20,6 +26,21 @@
   margin-left: 10px;
 }
 
-.Container {
-  padding: 0 24px;
+.FilterInput {
+  height: 100%;
+  padding: 28px 0;
+  &:not(:nth-of-type(1)) {
+    padding-left: 24px;
+    border-left: 1px solid rgba(110, 128, 152, .2);
+  }
+}
+
+.FullTimeInput {
+  padding: 12px 0 12px 20px;
+  border-left: 1px solid rgba(110, 128, 152, .2);
+}
+
+.SearchButon {
+  padding: 16px 14px;
+  margin-left: 28px;
 }

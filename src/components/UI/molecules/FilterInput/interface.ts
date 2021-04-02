@@ -5,6 +5,7 @@ export interface FilterInputProps {
   value: string,
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   icon: FilterInputIconeProps
+  className?: string;
 }
 
 export interface FilterInputIconeProps {

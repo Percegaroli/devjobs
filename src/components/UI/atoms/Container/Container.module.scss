@@ -1,0 +1,15 @@
+@import '/styles/tokens.scss';
+
+.Container {
+  padding: 0 24px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 0 40px 0 39px;
+  }
+
+  @media (min-width: $breakpoint-desktop){
+    width: 1100px;
+    margin: 0 auto;
+    padding: 0px;
+  }
+}

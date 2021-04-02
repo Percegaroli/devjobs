@@ -1,29 +1,31 @@
+@import '/styles/tokens.scss';
+
 .Header {
   background: url('../../../../../public/mobile/bg-pattern-header.svg');
   padding: 32px 24px 72px;
   width: 100%;
   display: flex;
   flex-direction: column;
-}
 
-.Desktop {
-  background: url('../../../../../public/desktop/bg-pattern-header.svg');
-  background-repeat: repeat-y;
-  background-size: cover;
-  padding: 46px 165px 85px;
-  border-radius: 0px 0px 0 100px;
+  @media (min-width: $breakpoint-tablet) {
+    padding-left: 39px;
+    padding-right: 40px;
+    background: url('../../../../../public/tablet/bg-pattern-header.svg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    border-radius: 0px 0px 0 100px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    background: url('../../../../../public/desktop/bg-pattern-header.svg');
+    background-repeat: repeat-y;
+    background-size: cover;
+    padding: 46px 165px 85px;
+  }
 }
 
 .Container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.FilterBarContainer {
-  position: absolute;
-  bottom: -42px;
-  left: 0;
-  width: 100%;
-  padding: 0 24px;
 }
