@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FilterLabel } from '../../../../enum/FilterLabel';
 import Button from '../../atoms/Button';
 import CheckboxFormItem from '../../molecules/CheckboxFormItem';

@@ -31,8 +31,8 @@ const FilterBar = (props: FilterBarProps) => {
   };
 
   return (
-    <>
-      <Card className={`${styles.Card} ${className}`}>
+    <div className={`${styles.Container} ${className}`}>
+      <Card className={`${styles.Card}`}>
         <Input
           onChange={(event) => setJobFilter(event.target.value)}
           placeholder="Filter by title..."
@@ -62,7 +62,7 @@ const FilterBar = (props: FilterBarProps) => {
         location={locationFilter}
         setLocation={setLocationFilter}
       />
-    </>
+    </div>
   );
 };
 

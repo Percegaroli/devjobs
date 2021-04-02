@@ -4,6 +4,7 @@
   width: 100%;
   min-height: 100vh;
   transition: all .2s;
+  position: relative;
 }
 
 .LightTheme {
@@ -15,5 +16,12 @@
 }
 
 .JobCardList {
-  margin-top: 57px;
+  margin-top: 97px;
+}
+
+.FilterBar {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 96px;
 }
