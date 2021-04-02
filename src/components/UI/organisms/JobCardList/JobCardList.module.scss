@@ -21,8 +21,13 @@
   grid-template-columns: 1fr;
   row-gap: 49px;
   
-  @media screen and (min-width: $breakpoint-tablet) and (max-width: $breakpoint-desktop) {
+  @media screen and (min-width: $breakpoint-tablet) {
     grid-template-columns: 1fr 1fr;
     gap: 65px 11px;
+  }
+
+  @media (min-width: $breakpoint-desktop){
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 65px 30px;
   }
 }

@@ -21,6 +21,10 @@
   @media(min-width: $breakpoint-tablet){
     margin-top:110px;
   }
+
+  @media (min-width: $breakpoint-desktop){
+    margin-top: 145px;
+  }
 }
 
 .FilterBar {
@@ -28,4 +32,10 @@
   width: 100%;
   left: 0;
   top: 96px;
+
+  @media(min-width: $breakpoint-desktop){
+    top: 121px;
+    left: 50%;
+    margin-left: -550px !important;
+  }
 }

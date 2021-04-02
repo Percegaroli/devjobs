@@ -1,9 +1,8 @@
 import { useRouter } from 'next/dist/client/router';
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { JobResume } from '../../../../models/JobResume';
 import { getGithubJobsProxy } from '../../../../service/GithubAPI';
 import { GetPositionsAPIResponse } from '../../../../service/GithubAPI/contracts';
-import { ThemeContext } from '../../../context/ThemeContext';
 import Button from '../../atoms/Button';
 import Container from '../../atoms/Container';
 import JobCard from '../../molecules/JobCard';
@@ -13,7 +12,6 @@ import styles from './JobCardList.module.scss';
 const JobCardList: React.FC<JobCardListProps> = ({
   className, jobs, setJobs, selectJob,
 }) => {
-  const { theme } = useContext(ThemeContext);
   const router = useRouter();
   const [page, setPage] = useState(1);
   const [showingButton, setShowingButton] = useState(jobs.length > 0);
