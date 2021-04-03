@@ -13,7 +13,16 @@ const JobDetails = (props: JobDetailsTemplateProps) => {
   const { jobSelected } = props;
   const { theme } = useContext(ThemeContext);
   const {
-    companyName, companyUrl, logoUrl, description, howToApply, jobTitle, location, postDate, type,
+    companyName,
+    companyUrl,
+    logoUrl,
+    description,
+    howToApply,
+    jobTitle,
+    location,
+    postDate,
+    type,
+    jobUrl,
   } = jobSelected;
 
   const renderPageContent = () => (jobSelected.id ? (
@@ -33,6 +42,7 @@ const JobDetails = (props: JobDetailsTemplateProps) => {
         location={location}
         postDate={postDate}
         type={type}
+        jobUrl={jobUrl}
       />
       <HowToApplySection
         howToApply={howToApply}
@@ -42,6 +52,7 @@ const JobDetails = (props: JobDetailsTemplateProps) => {
         className={styles.ApplyNowCard}
         company={companyName}
         role={jobTitle}
+        jobUrl={jobUrl}
       />
     </>
   ) : null);

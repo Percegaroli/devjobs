@@ -3,4 +3,5 @@ export interface ApplyNowCardProps {
   onlyButton?: boolean
   role: string;
   company: string;
+  jobUrl: string;
 }

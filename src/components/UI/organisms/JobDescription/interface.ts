@@ -5,4 +5,5 @@ export interface JobDescriptionProps {
   location: string;
   type: string;
   className?: string;
+  jobUrl: string;
 }

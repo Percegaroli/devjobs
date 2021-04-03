@@ -9,7 +9,7 @@ import { Colors } from '../../../../enum/Colors';
 import Container from '../../atoms/Container';
 
 const ApplyNowCard = ({
-  className, onlyButton, company, role,
+  className, onlyButton, company, role, jobUrl,
 }: ApplyNowCardProps) => {
   const { theme } = useContext(ThemeContext);
 
@@ -37,6 +37,7 @@ const ApplyNowCard = ({
         <Button
           text="Apply now"
           fullWidth={onlyButton}
+          onClick={() => window.open(jobUrl)}
         />
       </Container>
 

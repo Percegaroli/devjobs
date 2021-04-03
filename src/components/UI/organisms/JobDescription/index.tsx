@@ -13,7 +13,7 @@ import UseResolution from '../../../../hooks/UseResolution';
 
 const JobDescription = (props: JobDescriptionProps) => {
   const {
-    description, className, jobTitle, location, postDate, type,
+    description, className, jobTitle, location, postDate, type, jobUrl,
   } = props;
   const [elements, setElements] = useState<Array<React.ReactElement>>([]);
   const resolution = UseResolution();
@@ -126,6 +126,7 @@ const JobDescription = (props: JobDescriptionProps) => {
           <Button
             fullWidth={resolution === 'Mobile'}
             text="Apply Now"
+            onClick={() => window.open(jobUrl)}
           />
         </div>
         {elements.map((element) => element)}
