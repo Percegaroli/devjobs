@@ -1,4 +1,8 @@
 export interface JobDescriptionProps {
-  description: string
+  description: string;
+  postDate: Date;
+  jobTitle: string;
+  location: string;
+  type: string;
   className?: string;
 }

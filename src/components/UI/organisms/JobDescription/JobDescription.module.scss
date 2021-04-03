@@ -1,11 +1,34 @@
+@import '/styles/tokens.scss';
+
 .Item {
-  //margin-bottom: 40px;
+  margin-bottom: 40px;
 
   &:last-child {
     margin: 0;
   }
 }
 
-.Container {
-  padding: 0 24px;
+.Card {
+  padding: 40px 24px 32px;
+}
+
+.CategoryContainer {
+  margin-bottom: 11px !important;
+}
+
+.Title {
+  margin-bottom: 12px;
+}
+
+.JobResume {
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  margin-bottom: 32px;
+
+  @media (min-width: $breakpoint-tablet){
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 }

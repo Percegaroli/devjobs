@@ -3,6 +3,7 @@ import parser from 'html-dom-parser';
 import { HowToApplySectionProps } from './interface';
 import styles from './HowToApplySection.module.scss';
 import HowToApplyCard from '../../molecules/HowToApplyCard';
+import Container from '../../atoms/Container';
 
 const HowToApplySection = (props: HowToApplySectionProps) => {
   const { howToApply, className } = props;
@@ -36,9 +37,9 @@ const HowToApplySection = (props: HowToApplySectionProps) => {
   };
 
   return (
-    <div className={`${styles.Container} ${className}`}>
+    <Container className={className}>
       <HowToApplyCard howToApply={description} link={link} />
-    </div>
+    </Container>
   );
 };
 

@@ -1,8 +1,8 @@
 import { useRouter } from 'next/dist/client/router';
 import React, { useState, useEffect } from 'react';
-import { JobResume } from '../../../../models/JobResume';
 import { getGithubJobsProxy } from '../../../../service/GithubAPI';
 import { GetPositionsAPIResponse } from '../../../../service/GithubAPI/contracts';
+import { mapAPIResponseToState } from '../../../../util/dataMapping/jobInfo';
 import Button from '../../atoms/Button';
 import Container from '../../atoms/Container';
 import JobCard from '../../molecules/JobCard';
@@ -47,17 +47,6 @@ const JobCardList: React.FC<JobCardListProps> = ({
     setJobs(stateCopy);
     setPage(page + 1);
   };
-
-  const mapAPIResponseToState = (jobsApi: Array<GetPositionsAPIResponse>):
-    Array<JobResume> => jobsApi.map((job) => ({
-    id: job.id,
-    type: job.type,
-    company: job.company,
-    location: job.location,
-    title: job.title,
-    postTime: job.created_at.toString(),
-    logoUrl: job.company_logo,
-  }));
 
   const renderButton = () => (showingButton ? (
     <div className={styles.ButtonContainer}>

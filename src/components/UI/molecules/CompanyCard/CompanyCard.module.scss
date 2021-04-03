@@ -1,19 +1,44 @@
+@import '/styles/tokens.scss';
+
 .Card {
   position: relative;
   padding: 49px 90px 32px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: $breakpoint-tablet){
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+.RightSide {
+  @media (min-width: $breakpoint-tablet){
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    padding: 42px 40px;
+  }
 }
 
 .Logo {
   position: absolute;
   left: 50%;
   top: -25px;
+
+  @media (min-width: $breakpoint-tablet){
+    position: relative;
+    left: 0;
+    top: 0;
+  }
 }
 
 .Button {
-  margin-top: 24px;
+  @media (max-width: $breakpoint-tablet){
+    margin-top: 24px;
+  }
 }
 
 .Subtitle {

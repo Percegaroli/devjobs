@@ -1,3 +1,15 @@
 .Card {
-  padding: 24px;
+  padding: 24px 0;
+}
+
+.CompanyInfoContainer {
+  display: flex;
+  row-gap: 4px;
+  flex-direction: column;
+}
+
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

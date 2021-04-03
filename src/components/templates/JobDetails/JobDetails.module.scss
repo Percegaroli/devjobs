@@ -14,12 +14,16 @@
   margin-top: 9px;
 }
 
-.CardContained {
-  padding: 0 24px;
-}
-
 .ApplyNowCard {
-  margin-top: 65px;
+  margin-top: 40px;
+
+  @media (min-width: $breakpoint-tablet){
+    margin-top: 48px;
+  }
+
+  @media (min-width: $breakpoint-desktop){
+    margin-top: 73px;
+  }
 }
 
 .CompanyCard {
