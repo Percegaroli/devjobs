@@ -5,3 +5,9 @@ export interface HomePageTemplateProps {
   setJobs: (jobs: Array<JobResume>) => void
   selectJob: (selectedJobIndex: number) => void
 }
+
+export interface SearchParams {
+  location: string;
+  fullTime: boolean;
+  search: string;
+}

@@ -15,7 +15,7 @@ import SearchIcon from './icon-search.svg';
 import { FilterBarProps } from './interface';
 
 const FilterBar = (props: FilterBarProps) => {
-  const { className, setJobs } = props;
+  const { className, setJobs, setSearchParams } = props;
   const [jobFilter, setJobFilter] = useState('');
   const [locationFilter, setLocationFilter] = useState('');
   const [fullTimeOnly, setFullTimeOnly] = useState(false);
@@ -28,6 +28,12 @@ const FilterBar = (props: FilterBarProps) => {
         fullTime: fullTimeOnly,
         location: locationFilter,
         search: jobFilter,
+        page: 1,
+      });
+      setSearchParams({
+        fullTime: fullTimeOnly,
+        search: jobFilter,
+        location: locationFilter,
       });
       setJobs(mapAPIResponseToState(response.data));
       setShowingModal(false);

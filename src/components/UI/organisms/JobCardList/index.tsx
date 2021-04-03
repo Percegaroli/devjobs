@@ -10,10 +10,9 @@ import { JobCardListProps } from './interface';
 import styles from './JobCardList.module.scss';
 
 const JobCardList: React.FC<JobCardListProps> = ({
-  className, jobs, setJobs, selectJob,
+  className, jobs, setJobs, selectJob, filterParams, page, incrementPage,
 }) => {
   const router = useRouter();
-  const [page, setPage] = useState(1);
   const [showingButton, setShowingButton] = useState(jobs.length > 0);
 
   useEffect(() => {
@@ -24,11 +23,16 @@ const JobCardList: React.FC<JobCardListProps> = ({
 
   const fetchJobs = async () => {
     try {
+      const { fullTime, location, search } = filterParams;
       setShowingButton(false);
       const response = await getGithubJobsProxy({
         page,
+        fullTime,
+        location,
+        search,
       });
       addResponseToState(response.data);
+      incrementPage();
     } catch (error) {
       console.log(error);
     } finally {
@@ -45,7 +49,6 @@ const JobCardList: React.FC<JobCardListProps> = ({
     const mappedState = mapAPIResponseToState(jobsAPI);
     const stateCopy = [...jobs, ...mappedState];
     setJobs(stateCopy);
-    setPage(page + 1);
   };
 
   const renderButton = () => (showingButton ? (
