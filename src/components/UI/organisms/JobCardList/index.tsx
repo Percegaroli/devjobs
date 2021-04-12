@@ -64,11 +64,14 @@ const JobCardList: React.FC<JobCardListProps> = ({
   return (
     <Container className={`${styles.Container} ${className}`}>
 
-      <Button
+      <button
         className={styles.BotaoLojasProximas}
-        text="Lojas Próximas"
+        type="button"
         id="botao-casa-do-construtor-widget"
-      />
+        style="font-weight: bold; letter-spacing: 1.25px; font-size: 12px; padding: 12px 20px;border-radius: 8px;letter-spacing: 1.25px; border: none; background-color: #02226A; border-radius: 8px; color: white; text-transform: uppercase"
+      >
+        Lojas próximas
+      </button>
       <div className={`${styles.ListContainer}`}>
         {jobs.map((job, index) => (
           <JobCard
