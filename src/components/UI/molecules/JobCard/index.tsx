@@ -16,13 +16,6 @@ const JobCard: React.FC<JobCardProps> = ({
       className={`${styles.Card} ${styles.JobCard} ${className} ${styles[theme]}`}
       onClick={onClick}
     >
-      <ExternalImage
-        src={logoUrl}
-        alt=""
-        height={50}
-        width={50}
-        className={styles.Logo}
-      />
       <JobInfo
         postTime={postTime}
         type={type}

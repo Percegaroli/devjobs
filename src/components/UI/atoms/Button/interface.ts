@@ -4,4 +4,5 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary';
   onClick?: () => void
   fullWidth?: boolean;
+  id?: string;
 }

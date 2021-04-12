@@ -63,6 +63,12 @@ const JobCardList: React.FC<JobCardListProps> = ({
 
   return (
     <Container className={`${styles.Container} ${className}`}>
+
+      <Button
+        className={styles.BotaoLojasProximas}
+        text="Lojas Próximas"
+        id="botao-casa-do-construtor-widget"
+      />
       <div className={`${styles.ListContainer}`}>
         {jobs.map((job, index) => (
           <JobCard

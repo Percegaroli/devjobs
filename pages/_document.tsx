@@ -15,6 +15,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+          <script src="https://script.lojasproximas-teste.workers.dev/" defer />
         </Head>
         <body>
           <Main />

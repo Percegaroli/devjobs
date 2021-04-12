@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 import { ButtonProps } from './interface';
 
 const Button: React.FC<ButtonProps> = ({
-  text, className, variant, onClick, fullWidth,
+  text, className, variant, onClick, fullWidth, id,
 }) => {
   const { theme } = useContext(ThemeContext);
 
@@ -19,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       className={getClassName()}
+      id={id}
       type="button"
       onClick={onClick}
     >
@@ -32,6 +33,7 @@ Button.defaultProps = {
   variant: 'primary',
   onClick: () => {},
   fullWidth: false,
+  id: undefined,
 };
 
 export default Button;
